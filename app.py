@@ -33,7 +33,7 @@ def display_images(images, items_per_page=12):
                 response = requests.get(image_url)
                 if response.status_code == 200:
                     img = Image.open(BytesIO(response.content))
-                    st.image(img, use_column_width=True)
+                    st.image(img)
                 else:
                     st.error(f"Failed to load image: {image_url}")
             except Exception as e:
